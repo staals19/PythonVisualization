@@ -1,13 +1,13 @@
-import csv
-from PIL import Image, ImageDraw
-import matplotlib.pyplot as plt
+import csv #csv class
+from PIL import Image, ImageDraw #part of PIL
+import matplotlib.pyplot as plt #part of matplotlib
 import numpy as np
-img = Image.open('C:/Users/sriordan/Desktop/blank.png')
-draw_img = ImageDraw.Draw(img)
+img = Image.open('C:/Users/sriordan/Desktop/blank.png') #PIL
+draw_img = ImageDraw.Draw(img) #PIL
 
 data = []
 
-class info:
+class info: #creating a class for data
 	def __init__(self, name, color, number):
 		self.name = name
 		self.color = color
@@ -23,7 +23,7 @@ class info:
 with open('C:/Users/sriordan/Downloads/testdata - Sheet1.csv', 'rb') as file:
 	reader = csv.reader(file)
 	for row in reader:
-		data.append(info(row[0], row[1], row[2]))
+		data.append(info(row[0], row[1], row[2])) #creating the objects for each row
 		
 plt.xlabel('Names')
 plt.ylabel('Numbers')
